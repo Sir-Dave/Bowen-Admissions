@@ -6,9 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import logo from '../university_logo.png';
-import InputGroup from "react-bootstrap/InputGroup";
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const SignIn: React.FC = () => {
