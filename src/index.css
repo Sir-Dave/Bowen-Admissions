@@ -14,4 +14,15 @@ code {
 
 .signIn{
   background-color: #E8E9EB;
+  
+}
+
+.settings{
+  background-color: #E8E9EB;
+}
+
+
+#settings-header{
+  margin-left: 50px;
+
 }
