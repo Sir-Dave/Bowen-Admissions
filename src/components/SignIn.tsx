@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/Image';
 import logo from '../university_logo.png';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 
 const SignIn: React.FC = () => {
@@ -42,7 +42,7 @@ const SignIn: React.FC = () => {
                             <Form.Control type="password" placeholder="Password" aria-label="password"
                                 aria-describedby="password-input"
                             />
-                            <InputGroup.Text id="basic-addon1">
+                            <InputGroup.Text>
                                 {<FontAwesomeIcon icon={faEye} />}
 
                             </InputGroup.Text>

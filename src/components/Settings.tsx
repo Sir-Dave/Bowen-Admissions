@@ -10,7 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 
 const Settings: React.FC = () => {
@@ -54,7 +54,7 @@ const Settings: React.FC = () => {
 
             <Container className='settings min-vh-100' fluid>
                 <h4 id='settings-header'>Settings - Update Password</h4>
-                
+
 
                 <Row className="h-100 justify-content-center align-items-center">
                     <Col sm="10" md="8" lg="6">
@@ -73,7 +73,7 @@ const Settings: React.FC = () => {
                                         <Form.Control type="password" placeholder="Password" aria-label="password"
                                             aria-describedby="password-input"
                                         />
-                                        <InputGroup.Text id="basic-addon1">
+                                        <InputGroup.Text>
                                             {<FontAwesomeIcon icon={faEye} />}
 
                                         </InputGroup.Text>
