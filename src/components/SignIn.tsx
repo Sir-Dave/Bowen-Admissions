@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import logo from '../university_logo.png';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 
 
 const SignIn: React.FC = () => {
@@ -34,12 +37,16 @@ const SignIn: React.FC = () => {
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
+                        <Form.Label>Password</Form.Label>
+                        <InputGroup className="mb-3">
                             <Form.Control type="password" placeholder="Password" aria-label="password"
                                 aria-describedby="password-input"
                             />
-                        </Form.Group>
+                            <InputGroup.Text id="basic-addon1">
+                                {<FontAwesomeIcon icon={faEye} />}
+
+                            </InputGroup.Text>
+                        </InputGroup>
 
                         <Button variant="primary" type="submit" className="w-100 btn">
                             Sign In
