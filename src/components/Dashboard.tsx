@@ -8,6 +8,8 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faListAlt, faCreditCard, faBell } from '@fortawesome/free-regular-svg-icons';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Dashboard: React.FC = () => {
 
@@ -45,123 +47,135 @@ const Dashboard: React.FC = () => {
         <Breadcrumb.Item active>Dashboard</Breadcrumb.Item>
       </Breadcrumb>
 
-      <div className="container">
-        <div className='row'>
+      <Container>
+        <Row >
           <h3>Welcome, DOE John</h3>
-        </div>
-        <div className="row">
-          <div className="col-md-8">
+        </Row>
 
-            <div className='row alert alert-danger notice'>
-              <h4><strong>Notice!!!</strong></h4>
-              <p>
-                This is to inform you that <strong>Law, Nursing Science, Physiotherapy, Medical Laboratory Science</strong> and <strong>Medicine and Surgery Programmes</strong> are no longer available for <strong>2023/2024</strong> Admission Year. However, other programmes are still available for admission.
-              </p>
-            </div>
+        <Row>
+          <Col md="8">
+            <Card className='alert alert-danger notice'>
+              <Card.Body>
+                <h4><strong>Notice!!!</strong></h4>
+                <p>
+                  This is to inform you that <strong>Law, Nursing Science, Physiotherapy, Medical Laboratory Science</strong> and <strong>Medicine and Surgery Programmes</strong> are no longer available for <strong>2023/2024</strong> Admission Year. However, other programmes are still available for admission.
+                </p>
 
-            <div className='row alert alert-success application-instruction'>
-              <h4><strong>Application Instruction</strong></h4>
-              <p>
-                Please complete carefully this application. All required entries are denoted by <strong>thick red left border line</strong>. At any time, you may <strong>SAVE</strong> your work and logout. Return to your application with the email and password you submitted to create an account for this application. After completion and submission of your application, you may PRINT a copy of your application for your own records.
-              </p>
+              </Card.Body>
+            </Card>
 
-              <p>
-                Click on the <strong>Begin New Application</strong> button to create your on-line application. If you have questions about the application process, please contact our admissions officers (<strong>Sunday</strong> <a href="#">admissions@bowen.edu.ng :</a>  <strong>+234 803 537 1251</strong>)  (<strong>Amos</strong>  <a href="#">amos.odunlade@bowen.edu.ng:</a>  <strong>+234 703 795 6030</strong>)  (<strong>Fisoye </strong> <a href="#">fisoye.kolawole@bowen.edu.ng:</a>  <strong>+234 803 492 0436</strong>)  (<strong>Chuks</strong>  <a href="#">barnabas.anie@bowen.edu.ng:</a>  <strong>+234 903 524 3408</strong>)  for assistance.
 
-              </p>
-            </div>
+            <Card className='alert alert-success application-instruction'>
+              <Card.Body>
+                <h4><strong>Application Instruction</strong></h4>
+                <p>
+                  Please complete carefully this application. All required entries are denoted by <strong>thick red left border line</strong>. At any time, you may <strong>SAVE</strong> your work and logout. Return to your application with the email and password you submitted to create an account for this application. After completion and submission of your application, you may PRINT a copy of your application for your own records.
+                </p>
 
-            <div className='row gy-2'>
+                <p>
+                  Click on the <strong>Begin New Application</strong> button to create your on-line application. If you have questions about the application process, please contact our admissions officers (<strong>Sunday</strong> <a href="#">admissions@bowen.edu.ng :</a>  <strong>+234 803 537 1251</strong>)  (<strong>Amos</strong>  <a href="#">amos.odunlade@bowen.edu.ng:</a>  <strong>+234 703 795 6030</strong>)  (<strong>Fisoye </strong> <a href="#">fisoye.kolawole@bowen.edu.ng:</a>  <strong>+234 803 492 0436</strong>)  (<strong>Chuks</strong>  <a href="#">barnabas.anie@bowen.edu.ng:</a>  <strong>+234 903 524 3408</strong>)  for assistance.
 
-              <Card className='col-6 text-white bg-primary'>
-                <Card.Body>
-                  <FontAwesomeIcon icon={faBuilding} />
-                  <Card.Text> 0 Application(s) Done</Card.Text>
-                  <hr className="hr" />
-                  <Card.Text> Begin New Application</Card.Text>
-                </Card.Body>
-              </Card>
+                </p>
 
-              <Card className='col-6 text-white bg-warning'>
-                <Card.Body>
-                  <FontAwesomeIcon icon={faListAlt} />
-                  <Card.Text> Application Fee Summary</Card.Text>
-                  <hr className="hr" />
-                  <Card.Text> Print Summary</Card.Text>
-                </Card.Body>
-              </Card>
+              </Card.Body>
 
-              <Card className='col-6 text-white bg-success'>
-                <Card.Body>
-                  <FontAwesomeIcon icon={faCreditCard} />
-                  <Card.Text> Payment History</Card.Text>
-                  <hr className="hr" />
-                  <Card.Text> View Payment(s)</Card.Text>
-                </Card.Body>
-              </Card>
+            </Card>
 
-              <Card className='col-6 text-white bg-danger'>
-                <Card.Body>
-                  <FontAwesomeIcon icon={faBell} />
-                  <Card.Text> Application Status</Card.Text>
-                  <hr className="hr" />
-                  <Card.Text> View Status</Card.Text>
-                </Card.Body>
-              </Card>
 
-            </div>
-          </div>
+            <Row>
+              <Col>
+                <Card className='text-white bg-primary ml-3'>
+                  <Card.Body>
+                    <FontAwesomeIcon icon={faBuilding} />
+                    <Card.Text> 0 Application(s) Done</Card.Text>
+                    <hr className="hr" />
+                    <Card.Text> Begin New Application</Card.Text>
+                  </Card.Body>
+                </Card>
 
-          <div className="offset-md-1 col-md-3">
+              </Col>
+
+              <Col>
+                <Card className='text-white bg-warning'>
+                  <Card.Body>
+                    <FontAwesomeIcon icon={faListAlt} />
+                    <Card.Text> Application Fee Summary</Card.Text>
+                    <hr className="hr" />
+                    <Card.Text> Print Summary</Card.Text>
+                  </Card.Body>
+                </Card>
+
+              </Col>
+
+            </Row>
+
+            <Row className='mt-3'>
+              <Col>
+                <Card className='text-white bg-success'>
+                  <Card.Body>
+                    <FontAwesomeIcon icon={faCreditCard} />
+                    <Card.Text> Payment History</Card.Text>
+                    <hr className="hr" />
+                    <Card.Text> View Payment(s)</Card.Text>
+                  </Card.Body>
+                </Card>
+
+              </Col>
+
+              <Col>
+                <Card className='text-white bg-danger'>
+                  <Card.Body>
+                    <FontAwesomeIcon icon={faBell} />
+                    <Card.Text> Application Status</Card.Text>
+                    <hr className="hr" />
+                    <Card.Text> View Status</Card.Text>
+                  </Card.Body>
+                </Card>
+
+              </Col>
+            </Row>
+
+          </Col>
+
+          <Col md="3" offset="1">
             <Card>
               <Card.Header>Current Admission and Application</Card.Header>
 
               <Card.Body className='d-flex flex-column align-items-center'>
-                <Button variant="primary">Current Admission</Button>
+                <Button variant="primary" className='btn w-100'>Current Admission</Button>
 
-                <div className='row w-100 justify-content-between'>
-                  <div className='col-6'>
-                    <Card.Text>  <strong>Starts</strong> </Card.Text>
+                <Row className='w-100 mt-3'>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className='text-dates'> <strong>Starts</strong>  </p>
+                    <p className='text-dates'> Wednesday, May 3, 2023 </p>
                   </div>
 
-                  <div className='col-6 fs-6 text-end'>
-                    <Card.Text className='fs-6'> Wednesday, May 3, 2023 </Card.Text>
-                  </div>
-                </div>
+                </Row>
 
 
-                <div className='row w-100 justify-content-between'>
-
-                  <div className='col-6'>
-                    <Card.Text> <strong>Ends</strong> </Card.Text>
+                <Row className='w-100'>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className='text-dates'> <strong>Ends</strong>  </p>
+                    <p className='text-dates'> Wednesday, January 31, 2024</p>
                   </div>
 
-                  <div className='col-6 text-end'>
-                    <Card.Text className='fs-6'> Wednesday, January 31, 2024 </Card.Text>
-                  </div>
+                </Row>
 
-                </div>
+                <Button variant="primary" className='btn w-100'>Current Application</Button>
 
+                <Card.Text className='mt-3'><strong>No Application Currently</strong></Card.Text>
 
-
-                <hr className="my-3" /> {/* Divider after "Ends" */}
-
-                <Button variant="primary">Current Application</Button>
-
-                <Card.Text><strong>No Application Currently</strong></Card.Text>
-
-                <Button variant="outline-success">View Form History</Button>
-                <hr className="hr my-3" />
+                <Button variant="outline-success" className='btn w-100'>View Form History</Button>
               </Card.Body>
             </Card>
 
-          </div>
+          </Col>
 
-        </div>
-        </div>
+        </Row >
+      </Container >
 
-      </>
-      );
+    </>
+  );
 }
 
-      export default Dashboard;
+export default Dashboard;
