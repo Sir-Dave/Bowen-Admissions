@@ -44,7 +44,15 @@ const Profile: React.FC = () => {
                 </Container>
             </Navbar>
 
-            <div className='container breadcrumb'>
+            <style>
+                {`
+                    body {
+                        background-color: #E8E9EB;
+                    }
+                `}
+            </style>
+
+            <div className='container'>
                 <Breadcrumb className='mt-3'>
                     <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item active>Profile</Breadcrumb.Item>
@@ -52,12 +60,12 @@ const Profile: React.FC = () => {
 
             </div>
 
-            <Container className='settings min-vh-100' fluid>
+            <Container className='settings min-vh-100'>
                 <h4 id='settings-header'>Applicant Profile</h4>
 
 
-                <Row className="h-100 justify-content-center align-items-center">
-                    <Col sm="10" md="10" lg="10">
+                <Row>
+                    <Col>
 
                         <Form className="bg-white p-4 mt-3">
 
@@ -94,8 +102,8 @@ const Profile: React.FC = () => {
                     </Col>
                 </Row>
 
-                <Row className="h-100 justify-content-center align-items-center">
-                    <Col sm="10" md="10" lg="10">
+                <Row>
+                    <Col>
 
                         <Form className="bg-white p-4 mt-3">
 
@@ -112,7 +120,7 @@ const Profile: React.FC = () => {
                                         <option>Choose your status</option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
-                                        <option value="duvorced">Divorced</option>
+                                        <option value="divorced">Divorced</option>
                                     </Form.Select>
                                 </Col>
                                 <Col>
@@ -141,6 +149,53 @@ const Profile: React.FC = () => {
                     </Col>
                 </Row>
 
+                <Row>
+                    <Col>
+
+                        <Form className="bg-white p-4 mt-3">
+
+                            <Row>
+                                <Col><Form.Label> Maiden </Form.Label></Col>
+                                <Col><Form.Label> Nationality </Form.Label></Col>
+                                <Col><Form.Label> State </Form.Label></Col>
+                                <Col><Form.Label> LGA </Form.Label></Col>
+                            </Row>
+
+                            <Row>
+                                <Col> <Form.Control type="text" placeholder="Enter maiden name" aria-label="maiden-name" /></Col>
+
+                                <Col>
+                                    <Form.Select aria-label="nationality-select">
+                                        <option>Select your nationality</option>
+                                        <option value="nigeria">Nigeria</option>
+                                    </Form.Select>
+                                </Col>
+
+                                <Col>
+                                    <Form.Select aria-label="state-select" disabled>
+                                        <option>Select your state of origin</option>
+                                    </Form.Select>
+                                </Col>
+
+                                <Col>
+                                    <Form.Select aria-label="lga-select" disabled>
+                                        <option>Select your lga</option>
+                                    </Form.Select>
+                                </Col>
+                            </Row>
+
+                        </Form>
+                    </Col>
+                </Row>
+                
+                <Row>
+                    <div className="d-flex justify-content-end mt-3">
+                        <Button variant="primary" type="submit" className="btn">
+                            Update Profile
+                        </Button>
+                    </div>
+
+                </Row>
             </Container>
         </>
 
