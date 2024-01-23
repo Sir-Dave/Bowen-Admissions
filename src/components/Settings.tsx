@@ -24,14 +24,15 @@ const Settings: React.FC = () => {
                 `}
             </style>
 
-            <Container className='settings min-vh-100'>
+
+            <Container className='settings min-vh-100' fluid>
                 <Row className='mt-3'>
                     <Breadcrumb>
                         <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
                         <Breadcrumb.Item active>Update Password</Breadcrumb.Item>
                     </Breadcrumb>
-
                 </Row>
+
                 <h4 id='settings-header'>Settings - Update Password</h4>
 
 

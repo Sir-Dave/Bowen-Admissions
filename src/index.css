@@ -17,6 +17,26 @@ code {
   
 }
 
+.forgotPassword{
+  background-color: #E8E9EB;
+
+}
+
+.staffLogin{
+  background-color: #E8E9EB;
+
+}
+
+.referralLogin{
+  background-color: #E8E9EB;
+
+}
+
+.emailConfirm{
+  background-color: #E8E9EB
+
+}
+
 .text-dates{
   font-size: 12px;
 }
