@@ -8,12 +8,12 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar bg="primary" data-bs-theme="dark" expand="md">
         <Container>
-          <Navbar.Brand href="#home">Applicant Console</Navbar.Brand>
+          <Navbar.Brand href="/">Applicant Console</Navbar.Brand>
           <Nav className="mr-auto">
 
-            <Nav.Link href="#home">Dashboard</Nav.Link>
+            <Nav.Link href="/">Dashboard</Nav.Link>
 
             <NavDropdown title="Applications" id="applications-dropdown">
               <NavDropdown.Item href="#">My Applications</NavDropdown.Item>
@@ -26,9 +26,9 @@ const Header: React.FC = () => {
             </NavDropdown>
 
             <NavDropdown title="Welcome, User" id="user-dropdown">
-              <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#">Settings</NavDropdown.Item>
-              <NavDropdown.Item href="#">Logout</NavDropdown.Item>
+              <NavDropdown.Item href='/profile'>Profile </NavDropdown.Item>
+              <NavDropdown.Item href="/settings"> Settings </NavDropdown.Item>
+              <NavDropdown.Item href="/sign-in"> Logout </NavDropdown.Item>
             </NavDropdown>
 
           </Nav>
