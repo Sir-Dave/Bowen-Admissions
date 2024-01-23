@@ -25,7 +25,7 @@ const Profile: React.FC = () => {
                 `}
             </style>
 
-            <Container className='settings min-vh-100'>
+            <Container className='profile min-vh-100'>
                 <Row className='mt-3'>
                     <Breadcrumb>
                         <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>

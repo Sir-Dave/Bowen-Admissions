@@ -16,6 +16,13 @@ const Settings: React.FC = () => {
     return (
         <>
             <Header />
+            <style>
+                {`
+                    body {
+                        background-color: #E8E9EB;
+                    }
+                `}
+            </style>
 
             <Container className='settings min-vh-100'>
                 <Row className='mt-3'>
@@ -28,8 +35,8 @@ const Settings: React.FC = () => {
                 <h4 id='settings-header'>Settings - Update Password</h4>
 
 
-                <Row className="h-100 justify-content-center align-items-center">
-                    <Col sm="10" md="8" lg="6">
+                <Row>
+                    <Col>
 
                         <Form className="bg-white p-4 mt-3">
                             <h5 className='text-center'> To update your password </h5>
@@ -63,10 +70,6 @@ const Settings: React.FC = () => {
 
             </Container>
         </>
-
-
-
-
     );
 }
 
