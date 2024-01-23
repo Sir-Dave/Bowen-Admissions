@@ -13,7 +13,15 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <Header/>
+      <Header />
+      
+      <style>
+        {`
+                    body {
+                        background-color: #E8E9EB;
+                    }
+                `}
+      </style>
 
       <Container>
         <Row className='mt-3'>
@@ -21,6 +29,8 @@ const Dashboard: React.FC = () => {
             <Breadcrumb.Item href="#">Applicant</Breadcrumb.Item>
             <Breadcrumb.Item active>Dashboard</Breadcrumb.Item>
           </Breadcrumb>
+
+
         </Row>
 
         <Row >
