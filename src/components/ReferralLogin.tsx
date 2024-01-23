@@ -56,7 +56,7 @@ const ReferralLogin: React.FC = () => {
 
             <Row className="h-100 justify-content-center align-items-center mt-3">
                 <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Back to Applicant Login</a>
+                    <a href='/sign-in' className="d-block mt-1 text-decoration-none small">Back to Applicant Login</a>
                 </Col>
             </Row>
 

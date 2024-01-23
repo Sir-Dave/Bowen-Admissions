@@ -17,6 +17,10 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/referral-login" element={<ReferralLogin />} />
+        <Route path="/staff-login" element={<StaffLogin />} />
+        <Route path="/confirm-email" element={<EmailConfirm />} />
       </Routes>
     </BrowserRouter>
   );

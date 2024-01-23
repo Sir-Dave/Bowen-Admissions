@@ -64,16 +64,16 @@ const SignIn: React.FC = () => {
             <Row className="h-100 justify-content-center align-items-center mt-3">
                 <Col sm="10" md="8" lg="5" className='text-center'>
                     <a href="#" className="d-block mt-1 text-decoration-none small">Register an Account</a>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Forgot Password?</a>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Email not verified? Resend confirmation email</a>
+                    <a href='/forgot-password' className="d-block mt-1 text-decoration-none small">Forgot Password?</a>
+                    <a href='/confirm-email' className="d-block mt-1 text-decoration-none small">Email not verified? Resend confirmation email</a>
                 </Col>
             </Row>
 
 
             <Row className="h-100 justify-content-center align-items-center mt-4">
                 <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Staff Login</a>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Referral Login</a>
+                    <a href='/staff-login' className="d-block mt-1 text-decoration-none small">Staff Login</a>
+                    <a href='/referral-login' className="d-block mt-1 text-decoration-none small">Referral Login</a>
                 </Col>
             </Row>
         </Container>
