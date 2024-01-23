@@ -11,10 +11,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-regular-svg-icons';
 
 
-const SignIn: React.FC = () => {
+const StaffLogin: React.FC = () => {
 
     return (
-        <Container className='signIn min-vh-100' fluid>
+        <Container className='staffLogin min-vh-100' fluid>
             <Row className="h-100 pt-5 justify-content-center align-items-center">
                 <Col sm="10" md="8" lg="5">
                     <div className='text-center mt-3'>
@@ -22,22 +22,20 @@ const SignIn: React.FC = () => {
 
                     </div>
 
-                    <h6 className='text-center'>Returning Applicant Login  </h6>
+                    <h6 className='text-center'> <b> Staff Login </b> </h6>
 
                     <Form className="bg-white p-4 mt-3">
-                        <p className='text-center'>
-                            Use your registered email address and password to login and view or complete existing applications.
-                        </p>
+                      
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label> <b> Email address </b> </Form.Label>
                             <Form.Control type="email" placeholder="Enter email" />
                             <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
+                            Official email only (e.g user@bowen.edu.ng)
                             </Form.Text>
                         </Form.Group>
 
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label><b> Password </b></Form.Label>
                         <InputGroup className="mb-3">
                             <Form.Control type="password" placeholder="Password" aria-label="password"
                                 aria-describedby="password-input"
@@ -57,23 +55,15 @@ const SignIn: React.FC = () => {
 
             <Row className="h-100 justify-content-center align-items-center mt-3">
                 <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href="#" className="d-block mt-1 text-decoration-none small">Register an Account</a>
                     <a href='#' className="d-block mt-1 text-decoration-none small">Forgot Password?</a>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Email not verified? Resend confirmation email</a>
+                    <a href='#' className="d-block mt-1 text-decoration-none small">Back to Applicant Login</a>
                 </Col>
             </Row>
 
-
-            <Row className="h-100 justify-content-center align-items-center mt-4">
-                <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Staff Login</a>
-                    <a href='#' className="d-block mt-1 text-decoration-none small">Referral Login</a>
-                </Col>
-            </Row>
         </Container>
 
 
     );
 }
 
-export default SignIn;
+export default StaffLogin;

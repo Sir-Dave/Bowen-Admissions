@@ -52,6 +52,7 @@ const Settings: React.FC = () => {
 
             </div>
 
+            
             <Container className='settings min-vh-100' fluid>
                 <h4 id='settings-header'>Settings - Update Password</h4>
 
