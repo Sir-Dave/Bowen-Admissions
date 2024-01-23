@@ -4,45 +4,18 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import Header from './Header';
 
 
 const Profile: React.FC = () => {
 
     return (
         <>
-            <Navbar bg="primary" data-bs-theme="dark">
-                <Container>
-                    <Navbar.Brand href="#home">Applicant Console</Navbar.Brand>
-                    <Nav className="mr-auto">
-
-                        <Nav.Link href="#home">Dashboard</Nav.Link>
-
-                        <NavDropdown title="Applications" id="applications-dropdown">
-                            <NavDropdown.Item href="#">My Applications</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Application Status</NavDropdown.Item>
-                        </NavDropdown>
-
-                        <NavDropdown title="Payment Summary" id="payment-dropdown">
-                            <NavDropdown.Item href="#">Acceptance Fee</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Application Fee</NavDropdown.Item>
-                        </NavDropdown>
-
-                        <NavDropdown title="Welcome, User" id="user-dropdown">
-                            <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Settings</NavDropdown.Item>
-                            <NavDropdown.Item href="#">Logout</NavDropdown.Item>
-                        </NavDropdown>
-
-                    </Nav>
-                </Container>
-            </Navbar>
+            <Header />
 
             <style>
                 {`
@@ -52,15 +25,13 @@ const Profile: React.FC = () => {
                 `}
             </style>
 
-            <div className='container'>
-                <Breadcrumb className='mt-3'>
-                    <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
-                    <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-                </Breadcrumb>
-
-            </div>
-
             <Container className='settings min-vh-100'>
+                <Row className='mt-3'>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
+                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                    </Breadcrumb>
+                </Row>
                 <h4 id='settings-header'>Applicant Profile</h4>
 
 
@@ -187,7 +158,7 @@ const Profile: React.FC = () => {
                         </Form>
                     </Col>
                 </Row>
-                
+
                 <Row>
                     <div className="d-flex justify-content-end mt-3">
                         <Button variant="primary" type="submit" className="btn">
