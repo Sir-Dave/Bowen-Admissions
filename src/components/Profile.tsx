@@ -25,20 +25,27 @@ const Profile: React.FC = () => {
                 `}
             </style>
 
-            <Container className='profile min-vh-100'>
-                <Row className='mt-3'>
-                    <Breadcrumb>
-                        <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
-                        <Breadcrumb.Item active>Profile</Breadcrumb.Item>
-                    </Breadcrumb>
+            <Container className='settings min-vh-100' fluid>
+                <Row className="h-100 pt-4 justify-content-center align-items-center">
+                    <Col lg="11">
+                        <Breadcrumb>
+                            <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
+                            <Breadcrumb.Item active>Profile</Breadcrumb.Item>
+                        </Breadcrumb>
+                    </Col>
                 </Row>
-                <h4 id='settings-header'>Applicant Profile</h4>
 
 
-                <Row>
-                    <Col>
+                <Row className="h-100 pt-2 justify-content-center align-items-center">
+                    <Col lg="11">
+                        <h4 id='settings-header'>Applicant Profile</h4>
+                    </Col>
+                </Row>    
 
-                        <Form className="bg-white p-4 mt-3">
+                <Row className="h-100 pt-1 justify-content-center align-items-center">
+                    <Col lg="11">
+
+                        <Form className="bg-white p-4 mt-3" >
 
                             <Row>
                                 <Col><Form.Label> First Name </Form.Label></Col>
@@ -73,8 +80,8 @@ const Profile: React.FC = () => {
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col>
+                <Row className="h-100 pt-1 justify-content-center align-items-center">
+                    <Col lg="11">
 
                         <Form className="bg-white p-4 mt-3">
 
@@ -120,8 +127,8 @@ const Profile: React.FC = () => {
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col>
+                <Row className="h-100 pt-1 justify-content-center align-items-center">
+                    <Col lg="11">
 
                         <Form className="bg-white p-4 mt-3">
 
@@ -160,12 +167,13 @@ const Profile: React.FC = () => {
                 </Row>
 
                 <Row>
-                    <div className="d-flex justify-content-end mt-3">
-                        <Button variant="primary" type="submit" className="btn">
-                            Update Profile
-                        </Button>
-                    </div>
-
+                    <Col lg="11">
+                        <div className="d-flex justify-content-end mt-3">
+                            <Button variant="primary" type="submit" className="btn">
+                                Update Profile
+                            </Button>
+                        </div>
+                    </Col>
                 </Row>
             </Container>
         </>
