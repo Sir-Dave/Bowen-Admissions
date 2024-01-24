@@ -26,7 +26,7 @@ const Settings: React.FC = () => {
 
 
             <Container className='settings min-vh-100' fluid>
-                <Row className="h-100 pt-3 justify-content-center align-items-center">
+                <Row className="h-100 pt-4 justify-content-center align-items-center">
                     <Col lg="9">
                         <Breadcrumb>
                             <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
@@ -35,14 +35,14 @@ const Settings: React.FC = () => {
                     </Col>
                 </Row>
 
-                <Row className="h-100 pt-3 justify-content-center align-items-center">
+                <Row className="h-100 pt-2 justify-content-center align-items-center">
                     <Col lg="9">
                 <h4 id='settings-header'>Settings - Update Password</h4>
                     </Col>
 
                 </Row >
 
-                <Row className="h-100 pt-2 justify-content-center align-items-center">
+                <Row className="h-100 pt-1 justify-content-center align-items-center">
                     <Col lg="9">
 
                         <Form className="bg-white p-4 mt-3">

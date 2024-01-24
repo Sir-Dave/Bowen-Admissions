@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     <>
       <Navbar bg="primary" data-bs-theme="dark" expand="md">
         <Container>
-          <Navbar.Brand href="/">Applicant Console</Navbar.Brand>
+          <Navbar.Brand href="/"><b>Applicant Console</b></Navbar.Brand>
           <Nav className="mr-auto">
 
             <Nav.Link href="/">Dashboard</Nav.Link>
