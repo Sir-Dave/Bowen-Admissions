@@ -25,32 +25,25 @@ const Settings: React.FC = () => {
             </style>
 
 
-            <Container className='settings min-vh-100' fluid>
-                <Row className="h-100 pt-4 justify-content-center align-items-center">
-                    <Col lg="9">
-                        <Breadcrumb>
-                            <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
-                            <Breadcrumb.Item active>Update Password</Breadcrumb.Item>
-                        </Breadcrumb>
-                    </Col>
+            <Container className='settings min-vh-100'>
+                <Row className="mt-3">
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="#">Dashboard</Breadcrumb.Item>
+                        <Breadcrumb.Item active>Update Password</Breadcrumb.Item>
+                    </Breadcrumb>
                 </Row>
 
-                <Row className="h-100 pt-2 justify-content-center align-items-center">
-                    <Col lg="9">
                 <h4 id='settings-header'>Settings - Update Password</h4>
-                    </Col>
 
-                </Row >
-
-                <Row className="h-100 pt-1 justify-content-center align-items-center">
-                    <Col lg="9">
+                <Row>
+                    <Col>
 
                         <Form className="bg-white p-4 mt-3">
                             <h5 className='text-center'><b> To update your password </b></h5>
 
                             <p className='text-center small'>
-                                    Enter your new password in the input field below and 
-                                    click the 'Update Password' button to update your password 
+                                Enter your new password in the input field below and
+                                click the 'Update Password' button to update your password
                             </p>
 
                             <Form.Label> <b>Password*</b></Form.Label>
