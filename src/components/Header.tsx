@@ -16,7 +16,7 @@ const Header: React.FC = () => {
             <Nav.Link href="/">Dashboard</Nav.Link>
 
             <NavDropdown title="Applications" id="applications-dropdown">
-              <NavDropdown.Item href="#">My Applications</NavDropdown.Item>
+              <NavDropdown.Item href="applicant/form/application">My Applications</NavDropdown.Item>
               <NavDropdown.Item href="#">Application Status</NavDropdown.Item>
             </NavDropdown>
 
