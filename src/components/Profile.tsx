@@ -165,7 +165,7 @@ const Profile: React.FC = () => {
                             Update Profile
                         </Button>
                     </div>
-                    
+
                 </Row>
             </Container>
         </>

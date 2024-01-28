@@ -69,21 +69,25 @@ const Application: React.FC = () => {
                                     <Form.Check
                                         type="radio"
                                         id="utme"
+                                        name='entry-type'
                                         label="UTME (100 Level) - This application is for candidates who have not attended university after graduating from Senior Secondary School."
                                     />
                                     <Form.Check
                                         type="radio"
                                         id="a_level"
+                                        name='entry-type'
                                         label="A-LEVEL (JUPEB) - This application is for candidates who want to attend an Advanced Level class or JUPEB programme after Senior Secondary School."
                                     />
                                     <Form.Check
                                         type="radio"
                                         id="direct_entry"
+                                        name='entry-type'
                                         label="DIRECT ENTRY - This application is for candidate who have attended any type of College, University or Advanced level programme after Senior Secondary School."
                                     />
                                     <Form.Check
                                         type="radio"
                                         id="weekend_programme"
+                                        name='entry-type'
                                         label="WEEKEND PROGRAMME - This application is for candidates who have attended College or University and must have NYSC discharge certificate or an exemption letter. Please note that for a 4 year or 5 year course you may be admitted to 200 level or 300 level respectively."
                                     />
                                 </Col>
