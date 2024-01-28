@@ -44,7 +44,7 @@ const ForgotPassword: React.FC = () => {
 
             <Row className="h-100 justify-content-center align-items-center mt-3">
                 <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href="#" className="d-block mt-1 text-decoration-none small">Register an Account</a>
+                    <a href="/register-account" className="d-block mt-1 text-decoration-none small">Register an Account</a>
                     <a href='/sign-in' className="d-block mt-1 text-decoration-none small">Login Page</a>
                 </Col>
             </Row>

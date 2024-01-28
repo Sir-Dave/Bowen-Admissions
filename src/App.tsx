@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StaffLogin from './components/StaffLogin';
 import EmailConfirm from './components/EmailConfirm';
 import Application from './components/Application';
+import RegisterAccount from './components/RegisterAccount';
 
 
 import './App.css';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/referral-login" element={<ReferralLogin />} />
         <Route path="/staff-login" element={<StaffLogin />} />
         <Route path="/confirm-email" element={<EmailConfirm />} />
+        <Route path="/register-account" element={<RegisterAccount />} />
         <Route path="/applicant/form/application" element={<Application/>} />
         
       </Routes>
