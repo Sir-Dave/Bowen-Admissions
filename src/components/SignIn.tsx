@@ -63,7 +63,7 @@ const SignIn: React.FC = () => {
 
             <Row className="h-100 justify-content-center align-items-center mt-3">
                 <Col sm="10" md="8" lg="5" className='text-center'>
-                    <a href="#" className="d-block mt-1 text-decoration-none small">Register an Account</a>
+                    <a href="/register-account" className="d-block mt-1 text-decoration-none small">Register an Account</a>
                     <a href='/forgot-password' className="d-block mt-1 text-decoration-none small">Forgot Password?</a>
                     <a href='/confirm-email' className="d-block mt-1 text-decoration-none small">Email not verified? Resend confirmation email</a>
                 </Col>
