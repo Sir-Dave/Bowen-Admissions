@@ -1,8 +1,14 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import { useNavigate } from 'react-router-dom';
 
 const CurrentAdmissionCard: React.FC = () => {
+    const navigate = useNavigate();
+
+    const viewFormSummary = () => {
+        navigate('/applicant/form/application');
+    };
     return (
         <Card>
             <Card.Header>Current Admission and Application</Card.Header>
@@ -31,7 +37,7 @@ const CurrentAdmissionCard: React.FC = () => {
 
                 <Card.Text className='mt-3'>Application Form Submitted</Card.Text>
 
-                <Button variant="outline-success" className='btn w-100'>Print Form History</Button>
+                <Button variant="outline-success" className='btn w-100' onClick={viewFormSummary}>Print Form Summary </Button>
 
                 <Button variant="outline-info" className='mt-4 btn w-100'>Print Letter of Admission</Button>
                 <Button variant="outline-info" className='mt-2 btn w-100'>Pay Acceptance Fee</Button>

@@ -11,7 +11,7 @@ import EmptyAdmissionCard from '../components/EmptyAdmissionCard';
 import CurrentAdmissionCard from '../components/CurrentAdmissionCard';
 
 const Dashboard: React.FC = () => {
-  var hasAdmission = false;
+  var hasAdmission = true;
 
 
   return (
