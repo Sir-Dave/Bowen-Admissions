@@ -8,7 +8,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
-import Header from './Header';
+import Header from '../components/Header';
 
 
 const Profile: React.FC = () => {

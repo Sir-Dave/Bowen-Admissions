@@ -4,12 +4,15 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faListAlt, faCreditCard, faBell } from '@fortawesome/free-regular-svg-icons';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Header from './Header';
+import Header from '../components/Header';
+import EmptyAdmissionCard from '../components/EmptyAdmissionCard';
+import CurrentAdmissionCard from '../components/CurrentAdmissionCard';
 
 const Dashboard: React.FC = () => {
+  var hasAdmission = false;
+
 
   return (
     <>
@@ -123,37 +126,8 @@ const Dashboard: React.FC = () => {
           </Col>
 
           <Col md="3" offset="1">
-            <Card>
-              <Card.Header>Current Admission and Application</Card.Header>
-
-              <Card.Body className='d-flex flex-column align-items-center'>
-                <Button variant="primary" className='btn w-100'>Current Admission</Button>
-
-                <Row className='w-100 mt-3'>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <p className='text-dates'> <strong>Starts</strong>  </p>
-                    <p className='text-dates'> Wednesday, May 3, 2023 </p>
-                  </div>
-
-                </Row>
-
-
-                <Row className='w-100'>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <p className='text-dates'> <strong>Ends</strong>  </p>
-                    <p className='text-dates'> Wednesday, January 31, 2024</p>
-                  </div>
-
-                </Row>
-
-                <Button variant="primary" className='btn w-100'>Current Application</Button>
-
-                <Card.Text className='mt-3'><strong>No Application Currently</strong></Card.Text>
-
-                <Button variant="outline-success" className='btn w-100'>View Form History</Button>
-              </Card.Body>
-            </Card>
-
+            {/* TODO: Use this boolean value later on to toggle the application card info */}
+            {hasAdmission ? <CurrentAdmissionCard /> : <EmptyAdmissionCard />}
           </Col>
 
         </Row >
