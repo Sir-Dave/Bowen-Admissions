@@ -8,8 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Header from '../components/Header';
 import EmptyAdmissionCard from '../components/EmptyAdmissionCard';
+import CurrentAdmissionCard from '../components/CurrentAdmissionCard';
 
 const Dashboard: React.FC = () => {
+  var hasAdmission = false;
+
 
   return (
     <>
@@ -123,7 +126,8 @@ const Dashboard: React.FC = () => {
           </Col>
 
           <Col md="3" offset="1">
-            <EmptyAdmissionCard/>
+            {/* TODO: Use this boolean value later on to toggle the application card info */}
+            {hasAdmission ? <CurrentAdmissionCard /> : <EmptyAdmissionCard />}
           </Col>
 
         </Row >
