@@ -12,6 +12,7 @@ import RegisterAccount from './screens/auth/RegisterAccount';
 
 
 import './App.css';
+import StaffDashboard from './screens/staff/StaffDashboard';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/confirm-email" element={<EmailConfirm />} />
         <Route path="/register-account" element={<RegisterAccount />} />
         <Route path="/applicant/form/application" element={<Application/>} />
+        <Route path="/admin/management-console/dashboard" element={<StaffDashboard/>} />
         
       </Routes>
     </BrowserRouter>

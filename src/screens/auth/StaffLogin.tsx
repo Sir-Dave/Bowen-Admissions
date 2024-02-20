@@ -9,9 +9,15 @@ import logo from '../../university_logo.png';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 
 const StaffLogin: React.FC = () => {
+    const navigate = useNavigate();
+
+    const signIn = () => {
+        navigate('/admin/management-console/dashboard');
+    };
 
     return (
         <Container className='staffLogin min-vh-100' fluid>
@@ -46,7 +52,7 @@ const StaffLogin: React.FC = () => {
                             </InputGroup.Text>
                         </InputGroup>
 
-                        <Button variant="primary" type="submit" className="w-100 btn">
+                        <Button variant="primary" type="submit" className="w-100 btn" onClick={signIn}>
                             Sign In
                         </Button>
                     </Form>
