@@ -8,27 +8,40 @@ const StaffHeader: React.FC = () => {
 
   return (
     <>
-      <Navbar bg="primary" data-bs-theme="dark" expand="md">
+      <Navbar bg="dark" data-bs-theme="dark" expand="md">
         <Container>
-          <Navbar.Brand href="/"><b>Applicant Console</b></Navbar.Brand>
+          <Navbar.Brand href="/"><b>UG Admissions</b></Navbar.Brand>
           <Nav className="mr-auto">
 
-            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/admin/management-console/dashboard">Dashboard</Nav.Link>
 
-            <NavDropdown title="Applications" id="applications-dropdown">
-              <NavDropdown.Item href="applicant/form/application">My Applications</NavDropdown.Item>
-              <NavDropdown.Item href="#">Application Status</NavDropdown.Item>
+            <NavDropdown data-bs-theme="light" title="Payment" id="payment-dropdown">
+              <NavDropdown.Item href="#">Setting</NavDropdown.Item>
+              <NavDropdown.Item href="#">Statistics</NavDropdown.Item>
+              <NavDropdown.Item href="#">Verify</NavDropdown.Item>
+              <NavDropdown.Item href="#">Store School Fee</NavDropdown.Item>
+              <NavDropdown.Item href="#">Set School Fee</NavDropdown.Item>
+              <NavDropdown.Item href="#">View Applicant School Fee</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Payment Summary" id="payment-dropdown">
-              <NavDropdown.Item href="#">Acceptance Fee</NavDropdown.Item>
-              <NavDropdown.Item href="#">Application Fee</NavDropdown.Item>
+            <NavDropdown data-bs-theme="light" title="Application" id="application-dropdown">
+              <NavDropdown.Item href="#">Create</NavDropdown.Item>
+              <NavDropdown.Item href="#">Statistics</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Welcome, User" id="user-dropdown">
-              <NavDropdown.Item href='/profile'>Profile </NavDropdown.Item>
-              <NavDropdown.Item href="/settings"> Settings </NavDropdown.Item>
-              <NavDropdown.Item href="/sign-in"> Logout </NavDropdown.Item>
+            <NavDropdown data-bs-theme="light" title="Applicant" id="applicant-dropdown">
+              <NavDropdown.Item href="#">Applicant</NavDropdown.Item>
+              <NavDropdown.Item href="#">Progress</NavDropdown.Item>
+              <NavDropdown.Item href="#">Registered Applicant</NavDropdown.Item>
+              <NavDropdown.Item href="#">Reset Password</NavDropdown.Item>
+            </NavDropdown>
+
+            <NavDropdown data-bs-theme="light" title="Administration" id="administration-dropdown">
+              <NavDropdown.Item href='#'>Form </NavDropdown.Item>
+              <NavDropdown.Item href="#"> Programme </NavDropdown.Item>
+              <NavDropdown.Item href="#"> Programme-cutoff </NavDropdown.Item>
+              <NavDropdown.Item href='#'>Referral </NavDropdown.Item>
+              <NavDropdown.Item href="#"> Region </NavDropdown.Item>
             </NavDropdown>
 
           </Nav>
