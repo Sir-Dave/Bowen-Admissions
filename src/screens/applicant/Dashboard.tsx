@@ -7,7 +7,7 @@ import { faBuilding, faListAlt, faCreditCard, faBell } from '@fortawesome/free-r
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {

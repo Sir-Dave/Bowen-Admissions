@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import logo from '../university_logo.png';
+import logo from '../../university_logo.png';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-regular-svg-icons';

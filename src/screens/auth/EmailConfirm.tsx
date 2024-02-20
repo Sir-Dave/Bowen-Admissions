@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import logo from '../university_logo.png';
+import logo from '../../university_logo.png';
 
 
 const EmailConfirm: React.FC = () => {

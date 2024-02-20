@@ -4,7 +4,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import Form from 'react-bootstrap/Form';
 
 interface ApplicationInfo {

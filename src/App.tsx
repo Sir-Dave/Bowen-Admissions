@@ -1,14 +1,14 @@
-import Dashboard from './screens/Dashboard';
-import SignIn from './screens/SignIn';
-import ForgotPassword from './screens/ForgotPassword';
-import ReferralLogin from './screens/ReferralLogin';
-import Settings from './screens/Settings';
-import Profile from './screens/Profile';
+import Dashboard from './screens/applicant/Dashboard';
+import SignIn from './screens/auth/SignIn';
+import ForgotPassword from './screens/auth/ForgotPassword';
+import ReferralLogin from './screens/auth/ReferralLogin';
+import Settings from './screens/applicant/Settings';
+import Profile from './screens/applicant/Profile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import StaffLogin from './screens/StaffLogin';
-import EmailConfirm from './screens/EmailConfirm';
-import Application from './screens/Application';
-import RegisterAccount from './screens/RegisterAccount';
+import StaffLogin from './screens/auth/StaffLogin';
+import EmailConfirm from './screens/auth/EmailConfirm';
+import Application from './screens/applicant/Application';
+import RegisterAccount from './screens/auth/RegisterAccount';
 
 
 import './App.css';
