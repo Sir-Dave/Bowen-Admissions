@@ -10,19 +10,25 @@ const SIGN_UP = "/applicant/register"
 const STAFF_SIGN_IN = "staff/login"
 const APPLICANT_PROFILE = "/applicant/profile"
 
+const api = axios.create({
+    baseURL: BASE_URL,
+    headers: {
+        'Content-Type': 'application/json'
+    },
+});
 
 export const login = async (email: string, password: string) => {
     const request: SignInRequest = { email, password };
     const body = JSON.stringify(request);
     try {
-        const data = await axios.post<SignInResponse> (BASE_URL + SIGN_IN, body);
+        const data = await api.post<SignInResponse>(SIGN_IN, body);
         return data;
     } catch (error) {
         handleError(error);
     }
 }
 
-export const register = async(
+export const register = async (
     firstName: string,
     surname: string,
     email: string,
@@ -31,26 +37,27 @@ export const register = async(
     password: string,
     code: number
 ) => {
-    const request: RegisterRequest = { firstName, surname, email,
+    const request: RegisterRequest = {
+        firstName, surname, email,
         phoneNo, countryCode, password, code
     };
 
     const body = JSON.stringify(request);
     try {
-        const data = await axios.post<RegisterResponse>(BASE_URL + SIGN_UP, body);
+        const data = await api.post<RegisterResponse>(SIGN_UP, body);
         return data;
-        
+
     } catch (error) {
         handleError(error)
-        
+
     }
 }
 
 export const getApplicantProfile = async () => {
     try {
-        const data = await axios.get<UserProfile>(BASE_URL + APPLICANT_PROFILE);
+        const data = await api.get<UserProfile>(APPLICANT_PROFILE);
         return data;
-        
+
     } catch (error) {
         handleError(error);
     }
@@ -62,37 +69,38 @@ export const staffLogin = async (email: string, password: string) => {
     try {
         const data = await axios.post<SignInResponse>(BASE_URL + STAFF_SIGN_IN, body);
         return data;
-        
+
     } catch (error) {
         handleError(error);
     }
 }
 
 export const handleError = (error: any) => {
-    if (axios.isAxiosError(error)){
+    console.log("error is " + error)
+    if (axios.isAxiosError(error)) {
         var err = error.response
-        if (Array.isArray(err?.data.errors)){
-            for (let val of err?.data.errors){
+        if (Array.isArray(err?.data.errors)) {
+            for (let val of err?.data.errors) {
                 toast.warning(val.description)
-                 
+
             }
         }
-        else if (typeof err?.data.errors === 'object'){
-            for (let e in err?.data.errors){
+        else if (typeof err?.data.errors === 'object') {
+            for (let e in err?.data.errors) {
                 toast.warning(err.data.errors[e][0]);
             }
         }
 
-        else if (err?.data){
+        else if (err?.data) {
             toast.warning(err?.data)
         }
-        
-        else if (err?.status == 401){
+
+        else if (err?.status === 401) {
             toast.warning("Please login to continue")
             window.history.pushState({}, "Sign In", "/sign-in")
         }
 
-        else if (err  ){
+        else if (err) {
             toast.warning(err?.data)
         }
     }

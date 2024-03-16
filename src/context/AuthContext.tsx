@@ -47,8 +47,9 @@ export const UserProvider = ({ children }: Props) => {
         toast.success("Registration Successful!");
         navigate("/sign-in");
       }
+      else toast.error("An error occurred during registration")
     })
-      .catch((e) => toast.warning("An error occurred during registration"));
+      .catch((e) => toast.error("An error occurred during registration"));
   };
 
   const loginUser = async (email: string, password: string) => {
@@ -59,8 +60,9 @@ export const UserProvider = ({ children }: Props) => {
         toast.success("Login Success!");
         navigate("/");
       }
+      else toast.error("An error occurred during sign in");
     })
-      .catch((e) => toast.warning("An error occurred during sign in"));
+      .catch((e) => toast.error("An error occurred during sign in"));
   };
 
   const getUserProfile = async () => {
@@ -70,8 +72,9 @@ export const UserProvider = ({ children }: Props) => {
         localStorage.setItem("user", JSON.stringify(userObj));
         setUser(userObj!);
       }
+      else toast.error("An error occurred while retrieving your profile");
     })
-      .catch((e) => toast.warning("An error occurred while retrieving your profile"));
+      .catch((e) => toast.error("An error occurred while retrieving your profile"));
   };
 
   const isLoggedIn = () => {
