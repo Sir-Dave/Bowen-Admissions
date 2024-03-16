@@ -2,7 +2,7 @@ interface SignInResponse {
     title: string
     message: string
     token: string
-    //data?: string
+    //data?: string   
 }
 
 interface RegisterResponse {
