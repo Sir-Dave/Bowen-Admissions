@@ -5,8 +5,9 @@ const BASE_URL = "https://bhubapi.bowen.edu.ng/api/v1/ugadmissions";
 const SIGN_IN = "/applicant/login"
 const SIGN_UP = "/applicant/register"
 const STAFF_SIGN_IN = "staff/login"
+const APPLICANT_PROFILE = "/applicant/profile"
 
-export const loginUser = async (email: string, password: string) => {
+export const login = async (email: string, password: string) => {
     const request: SignInRequest = { email, password };
     const body = JSON.stringify(request);
     try {
@@ -17,14 +18,14 @@ export const loginUser = async (email: string, password: string) => {
     }
 }
 
-export const registerUser = async(
+export const register = async(
     firstName: string,
     surname: string,
     email: string,
     phoneNo: string,
     countryCode: string,
     password: string,
-    code: number,
+    code: number
 ) => {
     const request: RegisterRequest = { firstName, surname, email,
         phoneNo, countryCode, password, code
@@ -38,6 +39,16 @@ export const registerUser = async(
     } catch (error) {
         handleError(error)
         
+    }
+}
+
+export const getApplicantProfile = async () => {
+    try {
+        const data = await axios.get<UserProfile>(BASE_URL + APPLICANT_PROFILE);
+        return data;
+        
+    } catch (error) {
+        handleError(error);
     }
 }
 
