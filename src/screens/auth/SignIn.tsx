@@ -9,14 +9,29 @@ import logo from '../../university_logo.png';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from '@fortawesome/free-regular-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import * as Yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthContext } from '../../context/AuthContext';
+import { useForm } from "react-hook-form";
 
+
+type SignInFormInput = {
+    email: string
+    password: string
+}
+
+const validation = Yup.object().shape({
+    email: Yup.string().required("Email is required"),
+    password: Yup.string().required("Password is required")
+
+})
 
 const SignIn: React.FC = () => {
-    const navigate = useNavigate();
+    const { loginUser } = AuthContext();
+    const { register, handleSubmit, formState: { errors } } = useForm<SignInFormInput>({ resolver: yupResolver(validation) });
 
-    const signIn = () => {
-        navigate('/');
+    const handleLogin = (form: SignInFormInput) => {        
+        loginUser(form.email, form.password);
     };
 
     return (
@@ -30,14 +45,17 @@ const SignIn: React.FC = () => {
 
                     <h6 className='text-center'>Returning Applicant Login  </h6>
 
-                    <Form className="bg-white p-4 mt-3">
+                    <Form className="bg-white p-4 mt-3" onSubmit={handleSubmit(handleLogin)}>
                         <p className='text-center'>
                             Use your registered email address and password to login and view or complete existing applications.
                         </p>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control type="email" placeholder="Enter email"
+                                {...register("email")}
+                            />
+                            {errors.email ? (<p className="text-danger">{errors.email.message}</p>) : ("")}
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -47,14 +65,15 @@ const SignIn: React.FC = () => {
                         <InputGroup className="mb-3">
                             <Form.Control type="password" placeholder="Password" aria-label="password"
                                 aria-describedby="password-input"
+                                {...register("password")}
                             />
                             <InputGroup.Text>
                                 {<FontAwesomeIcon icon={faEye} />}
-
                             </InputGroup.Text>
                         </InputGroup>
+                        {errors.password ? (<p className="text-danger">{errors.password.message}</p>) : ("")}
 
-                        <Button variant="primary" type="submit" className="w-100 btn" onClick={signIn}>
+                        <Button variant="primary" type="submit" className="w-100 btn">
                             Sign In
                         </Button>
                     </Form>
