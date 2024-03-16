@@ -1,9 +1,9 @@
-interface SignInRequest {
+export interface SignInRequest {
     email: string
     password: string
 }
 
-interface RegisterRequest {
+export interface RegisterRequest {
     firstName: string
     surname: string
     email: string
@@ -13,11 +13,11 @@ interface RegisterRequest {
     code: number
 }
 
-interface StaffLoginRequest {
+export interface StaffLoginRequest {
     login: string
     password: string
 }
 
-interface EmailRequest {
+export interface EmailRequest {
     email: string
 }

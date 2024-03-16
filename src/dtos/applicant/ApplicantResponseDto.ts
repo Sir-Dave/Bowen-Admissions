@@ -1,4 +1,4 @@
-interface SessionInfo {
+export interface SessionInfo {
     id: number,
     sessionTitle: string,
     year: string,
@@ -7,7 +7,7 @@ interface SessionInfo {
 
 }
 
-interface SessionResponse {
+export interface SessionResponse {
     title: string
     message: string
     data: SessionInfo

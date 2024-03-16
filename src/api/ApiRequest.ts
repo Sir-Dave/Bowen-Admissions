@@ -1,11 +1,14 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import { RegisterRequest, SignInRequest, StaffLoginRequest } from "../dtos/auth/AuthRequestDto";
+import { RegisterResponse, SignInResponse } from "../dtos/auth/AuthResponseDto";
 
 const BASE_URL = "https://bhubapi.bowen.edu.ng/api/v1/ugadmissions";
 const SIGN_IN = "/applicant/login"
 const SIGN_UP = "/applicant/register"
 const STAFF_SIGN_IN = "staff/login"
 const APPLICANT_PROFILE = "/applicant/profile"
+
 
 export const login = async (email: string, password: string) => {
     const request: SignInRequest = { email, password };
