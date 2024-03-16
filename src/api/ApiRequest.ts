@@ -2,6 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { RegisterRequest, SignInRequest, StaffLoginRequest } from "../dtos/auth/AuthRequestDto";
 import { RegisterResponse, SignInResponse } from "../dtos/auth/AuthResponseDto";
+import { UserProfile } from "../dtos/user/UserDto";
 
 const BASE_URL = "https://bhubapi.bowen.edu.ng/api/v1/ugadmissions";
 const SIGN_IN = "/applicant/login"
