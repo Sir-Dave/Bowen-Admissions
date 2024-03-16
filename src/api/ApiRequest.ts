@@ -67,7 +67,7 @@ export const staffLogin = async (email: string, password: string) => {
     const request: StaffLoginRequest = { login: email, password };
     const body = JSON.stringify(request);
     try {
-        const data = await axios.post<SignInResponse>(BASE_URL + STAFF_SIGN_IN, body);
+        const data = await api.post<SignInResponse>(STAFF_SIGN_IN, body);
         return data;
 
     } catch (error) {

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { getApplicantProfile, login, register } from '../api/ApiRequest';
 import { toast } from 'react-toastify';
@@ -44,7 +44,7 @@ export const UserProvider = ({ children }: Props) => {
     await register(firstName, surname, email, phoneNo, countryCode, password, code
     ).then((res) => {
       if (res) {
-        toast.success("Registration Successful!");
+        toast.success(res?.data.message);
         navigate("/sign-in");
       }
       else toast.error("An error occurred during registration")

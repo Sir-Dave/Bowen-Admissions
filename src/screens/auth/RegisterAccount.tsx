@@ -10,8 +10,39 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
+import * as Yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AuthContext } from '../../context/AuthContext';
+import { useForm } from "react-hook-form";
+
+
+type RegisterFormInput = {
+  firstName: string
+  surname: string
+  email: string
+  phoneNo: string
+  countryCode: string
+  password: string
+}
+
+const validation = Yup.object().shape({
+  firstName: Yup.string().required("First name is required"),
+  surname: Yup.string().required("Last name is required"),
+  email: Yup.string().required("Email is required"),
+  phoneNo: Yup.string().required("Phone Number is required"),
+  countryCode: Yup.string().required("Country code is required"),
+  password: Yup.string().required("Password is required")
+
+})
+
 
 const RegisterAccount: React.FC = () => {
+  const { registerUser } = AuthContext();
+  const { register, handleSubmit, formState: { errors } } = useForm<RegisterFormInput>({ resolver: yupResolver(validation) });
+
+  const handleSignUp = (form: RegisterFormInput) => {
+    registerUser(form.firstName, form.surname, form.email, form.phoneNo, form.countryCode, form.password, 0);
+  };
 
   return (
     <>
@@ -50,7 +81,7 @@ const RegisterAccount: React.FC = () => {
 
             </Row>
 
-            <Row>
+            <Row onSubmit={handleSubmit(handleSignUp)}>
               <Form className="bg-white p-4 mt-3" >
 
                 <Row>
@@ -59,8 +90,14 @@ const RegisterAccount: React.FC = () => {
                 </Row>
 
                 <Row>
-                  <Col> <Form.Control type="name" placeholder="First name" aria-label="first-name" /></Col>
-                  <Col> <Form.Control type="name" placeholder="Last name" aria-label="last-name" /></Col>
+                  <Col>
+                    <Form.Control type="name" placeholder="First name" aria-label="first-name" {...register("firstName")} />
+                    {errors.firstName ? (<p className="text-danger">{errors.firstName.message}</p>) : ("")}
+                  </Col>
+                  <Col>
+                    <Form.Control type="name" placeholder="Last name" aria-label="last-name" {...register("surname")} />
+                    {errors.surname ? (<p className="text-danger">{errors.surname.message}</p>) : ("")}
+                  </Col>
                 </Row>
 
                 <Row className='mt-3'>
@@ -69,8 +106,14 @@ const RegisterAccount: React.FC = () => {
                 </Row>
 
                 <Row>
-                  <Col> <Form.Control type="email" placeholder="Code" aria-label="code" /></Col>
-                  <Col> <Form.Control type="phone" placeholder="Phone No." aria-label="phone" /> </Col>
+                  <Col>
+                    <Form.Control type="text" placeholder="Code" aria-label="code" {...register("countryCode")} />
+                    {errors.countryCode ? (<p className="text-danger">{errors.countryCode.message}</p>) : ("")}
+                  </Col>
+                  <Col>
+                    <Form.Control type="phone" placeholder="Phone No." aria-label="phone" {...register("phoneNo")} />
+                    {errors.phoneNo ? (<p className="text-danger">{errors.phoneNo.message}</p>) : ("")}
+                  </Col>
                 </Row>
 
                 <Row className='mt-3'>
@@ -79,18 +122,22 @@ const RegisterAccount: React.FC = () => {
                 </Row>
 
                 <Row>
-                  <Col> <Form.Control type="email" placeholder="Email" aria-label="email" /></Col>
-                  <Col> <InputGroup className="mb-3">
-                    <Form.Control type="password" placeholder="Password" aria-label="password"
-                      aria-describedby="password-input"
-                    />
-                    <InputGroup.Text>
-                      {<FontAwesomeIcon icon={faEye} />}
-
-                    </InputGroup.Text>
-                  </InputGroup> </Col>
+                  <Col>
+                    <Form.Control type="email" placeholder="Email" aria-label="email"
+                      {...register("email")} />
+                    {errors.email ? (<p className="text-danger">{errors.email.message}</p>) : ("")}
+                  </Col>
+                  <Col>
+                    <InputGroup className="mb-3">
+                      <Form.Control type="password" placeholder="Password" aria-label="password"
+                        aria-describedby="password-input" {...register("password")}
+                      />
+                      <InputGroup.Text>{<FontAwesomeIcon icon={faEye} />}</InputGroup.Text>
+                    </InputGroup>
+                    {errors.password ? (<p className="text-danger">{errors.password.message}</p>) : ("")}
+                  </Col>
                 </Row>
-                <Button variant="primary" type="submit" className="w-100 btn" onClick={RegisterAccount}>
+                <Button variant="primary" type="submit" className="w-100 btn">
                   Register
                 </Button>
               </Form>
