@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { getApplicantProfile, login, register } from '../api/ApiRequest';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { UserProfile } from '../dtos/user/UserDto';
 
 interface UserContextType {
   user: UserProfile | null;
