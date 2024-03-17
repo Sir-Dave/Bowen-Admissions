@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import StaffDashboard from './screens/staff/StaffDashboard';
 import { UserProvider } from './context/AuthContext';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   return (
@@ -24,16 +25,34 @@ function App() {
       <ToastContainer />
       <UserProvider>
         <Routes>
-          <Route path="/" element={< Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/referral-login" element={<ReferralLogin />} />
           <Route path="/staff-login" element={<StaffLogin />} />
           <Route path="/confirm-email" element={<EmailConfirm />} />
           <Route path="/register-account" element={<RegisterAccount />} />
-          <Route path="/applicant/form/application" element={<Application />} />
+          
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          
+          <Route path="/settings" element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          } />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } />
+          <Route path="/applicant/form/application" element={
+            <ProtectedRoute>
+              <Application />
+            </ProtectedRoute>
+          } />
           <Route path="/admin/management-console/dashboard" element={<StaffDashboard />} />
         </Routes>
       </UserProvider>
