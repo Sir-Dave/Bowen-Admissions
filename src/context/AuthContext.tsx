@@ -29,10 +29,13 @@ export const UserProvider = ({ children }: Props) => {
   useEffect(() => {
     const user = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    if (user && token) {
-      setUser(JSON.parse(user));
+    if (token) {
       setToken(token);
       axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+    }
+
+    if (user) {
+      setUser(JSON.parse(user));
     }
     setIsReady(true);
   }, []);
@@ -78,7 +81,7 @@ export const UserProvider = ({ children }: Props) => {
   };
 
   const isLoggedIn = () => {
-    return !!user;
+    return !!token;
   };
 
   const logout = () => {
