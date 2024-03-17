@@ -3,8 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { AuthContext } from '../context/AuthContext';
 
 const Header: React.FC = () => {
+  const { logout } = AuthContext();
 
   return (
     <>
@@ -28,7 +30,7 @@ const Header: React.FC = () => {
             <NavDropdown title="Welcome, User" id="user-dropdown">
               <NavDropdown.Item href='/profile'>Profile </NavDropdown.Item>
               <NavDropdown.Item href="/settings"> Settings </NavDropdown.Item>
-              <NavDropdown.Item href="/sign-in"> Logout </NavDropdown.Item>
+              <NavDropdown.Item onClick={logout}> Logout </NavDropdown.Item>
             </NavDropdown>
 
           </Nav>
