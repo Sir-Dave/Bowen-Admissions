@@ -71,7 +71,7 @@ export const UserProvider = ({ children }: Props) => {
   const getUserProfile = async () => {
     await getApplicantProfile().then((res) => {
       if (res) {
-        const userObj = res?.data
+        const userObj = res?.data.data
         localStorage.setItem("user", JSON.stringify(userObj));
         setUser(userObj!);
       }

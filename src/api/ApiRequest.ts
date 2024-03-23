@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { RegisterRequest, SignInRequest, StaffLoginRequest } from "../dtos/auth/AuthRequestDto";
 import { RegisterResponse, SignInResponse } from "../dtos/auth/AuthResponseDto";
-import { UserProfile } from "../dtos/user/UserDto";
+import { UserResponse } from "../dtos/user/UserDto";
 
 const BASE_URL = "https://bhubapi.bowen.edu.ng/api/v1/ugadmissions";
 const SIGN_IN = "/applicant/login"
@@ -55,7 +55,7 @@ export const register = async (
 
 export const getApplicantProfile = async () => {
     try {
-        const data = await api.get<UserProfile>(APPLICANT_PROFILE);
+        const data = await api.get<UserResponse>(APPLICANT_PROFILE);
         return data;
 
     } catch (error) {
