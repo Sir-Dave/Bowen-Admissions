@@ -3,14 +3,20 @@ import { toast } from "react-toastify";
 import { RegisterRequest, SignInRequest, StaffLoginRequest } from "../dtos/auth/AuthRequestDto";
 import { RegisterResponse, SignInResponse } from "../dtos/auth/AuthResponseDto";
 import { UserResponse } from "../dtos/user/UserDto";
+import { ApplicationFormResponse } from "../dtos/applicant/ApplicationFormResponse";
+import { ContactPersonResponse } from "../dtos/applicant/ContactPersonResponse";
+import { SessionResponse } from "../dtos/applicant/SessionResponseDto";
 
 const BASE_URL = "https://bhubapi.bowen.edu.ng/api/v1/ugadmissions";
 const SIGN_IN = "/applicant/login"
 const SIGN_UP = "/applicant/register"
-const STAFF_SIGN_IN = "staff/login"
+const STAFF_SIGN_IN = "/staff/login"
 const APPLICANT_PROFILE = "/applicant/profile"
+const CURRENT_SESSION = "/session/current"
+const CONTACT_PERSONS = "/contact/persons"
+const APPLICANT_FORM = "/applicant/form/current"
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: BASE_URL,
     headers: {
         'Content-Type': 'application/json'
@@ -56,6 +62,36 @@ export const register = async (
 export const getApplicantProfile = async () => {
     try {
         const data = await api.get<UserResponse>(APPLICANT_PROFILE);
+        return data;
+
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+export const getCurrentApplicationForm = async () => {
+    try {
+        const data = await api.get<ApplicationFormResponse>(APPLICANT_FORM);
+        return data;
+
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+export const getContactPersons = async () => {
+    try {
+        const data = await api.get<ContactPersonResponse>(CONTACT_PERSONS);
+        return data;
+
+    } catch (error) {
+        handleError(error);
+    }
+}
+
+export const getCurrentSession = async () => {
+    try {
+        const data = await api.get<SessionResponse>(CURRENT_SESSION);
         return data;
 
     } catch (error) {
