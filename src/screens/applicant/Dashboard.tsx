@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import Card from 'react-bootstrap/Card';
@@ -9,10 +9,16 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 const Dashboard: React.FC = () => {
-  var hasAdmission = true;
+  const { user, applicationDetail, getUserProfile, getUserCurrentApplication, hasApplication } = AuthContext();
 
+  useEffect(() => {
+    getUserProfile();
+    getUserCurrentApplication();
+    
+  }, []);
 
   return (
     <>
@@ -36,8 +42,9 @@ const Dashboard: React.FC = () => {
 
         </Row>
 
-        <Row >
-          <h3>Welcome, DOE John</h3>
+        <Row>
+          <h3>Welcome, {user?.surname.toUpperCase()} {user?.firstName}</h3>
+
         </Row>
 
         <Row>
@@ -126,8 +133,7 @@ const Dashboard: React.FC = () => {
           </Col>
 
           <Col md="3" offset="1">
-            {/* TODO: Use this boolean value later on to toggle the application card info */}
-            {hasAdmission ? <CurrentAdmissionCard /> : <EmptyAdmissionCard />}
+            {hasApplication() ? <CurrentAdmissionCard /> : <EmptyAdmissionCard />}
           </Col>
 
         </Row >
