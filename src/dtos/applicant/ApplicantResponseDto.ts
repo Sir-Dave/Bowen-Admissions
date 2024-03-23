@@ -1,3 +1,9 @@
+export interface SessionResponse {
+    title: string
+    message: string
+    data: SessionInfo[]
+}
+
 export interface SessionInfo {
     id: number,
     sessionTitle: string,
@@ -5,10 +11,4 @@ export interface SessionInfo {
     startDate: string,
     endDate: string
 
-}
-
-export interface SessionResponse {
-    title: string
-    message: string
-    data: SessionInfo
 }
