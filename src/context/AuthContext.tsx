@@ -111,6 +111,7 @@ export const UserProvider = ({ children }: Props) => {
   };
 
   const logout = () => {
+    delete api.defaults.headers.common["Authorization"]
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("applicationDetail");
