@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { AuthContext } from '../context/AuthContext';
 
 const Header: React.FC = () => {
-  const { logout } = AuthContext();
+  const { user, logout } = AuthContext();
 
   return (
     <>
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
               <NavDropdown.Item href="#">Application Fee</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Welcome, User" id="user-dropdown">
+            <NavDropdown title={`Welcome, ${user?.firstName}`} id="user-dropdown">
               <NavDropdown.Item href='/profile'>Profile </NavDropdown.Item>
               <NavDropdown.Item href="/settings"> Settings </NavDropdown.Item>
               <NavDropdown.Item onClick={logout}> Logout </NavDropdown.Item>
