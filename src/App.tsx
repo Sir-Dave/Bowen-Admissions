@@ -7,6 +7,8 @@ import Profile from './screens/applicant/Profile';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StaffLogin from './screens/auth/StaffLogin';
 import EmailConfirm from './screens/auth/EmailConfirm';
+import AcceptanceFee from './screens/applicant/AcceptanceFee';
+import IdCard from './screens/applicant/IdCard';
 import Application from './screens/applicant/Application';
 import RegisterAccount from './screens/auth/RegisterAccount';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,6 +53,16 @@ function App() {
           <Route path="/applicant/form/application" element={
             <ProtectedRoute>
               <Application />
+            </ProtectedRoute>
+          } />
+          <Route path="/applicant/form/acceptanceFee" element={
+            <ProtectedRoute>
+              <AcceptanceFee />
+            </ProtectedRoute>
+          } />
+          <Route path="/applicant/form/idCard" element={
+            <ProtectedRoute>
+              <IdCard />
             </ProtectedRoute>
           } />
           <Route path="/admin/management-console/dashboard" element={<StaffDashboard />} />
