@@ -181,7 +181,7 @@ const EmptyAdmissionCard: React.FC = () => {
 
         </Row>
 
-        <Button variant="primary" className='btn w-100'>Current Admission</Button>
+        <Button variant="primary" className='btn w-100'>Current Application</Button>
 
         <Card.Text className='mt-3'><strong>No Application Currently</strong></Card.Text>
 
@@ -203,7 +203,7 @@ const CurrentAdmissionCard: React.FC = () => {
       <Card.Header>Current Admission and Application</Card.Header>
 
       <Card.Body className='d-flex flex-column align-items-center'>
-      <Card.Header className='alert alert-secondary'>Current Admission  </Card.Header> 
+      <Button variant="primary" className='btn w-100'>Current Admission</Button>
 
         <Row className='w-100 mt-3'>
           <div className="d-flex justify-content-between align-items-center">
@@ -222,7 +222,7 @@ const CurrentAdmissionCard: React.FC = () => {
 
         </Row>
 
-        <Card.Header className='alert alert-secondary'>Current Application </Card.Header> 
+        <Button variant="primary" className='btn w-100'>Current Application</Button>
 
         <Card.Text className='mt-3'>Application Form Submitted</Card.Text>
 
