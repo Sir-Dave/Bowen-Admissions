@@ -5,8 +5,8 @@ export interface UserResponse{
 }
 
 export interface UserProfile {
-    id: number,
-    surname: string,
+    id: number
+    surname: string
     firstName: string
     middleName: string | null
     phoneNo: string | null

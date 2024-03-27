@@ -9,9 +9,11 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import Header from '../../components/Header';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const Profile: React.FC = () => {
+    const { user } = AuthContext();
 
     return (
         <>
@@ -47,9 +49,15 @@ const Profile: React.FC = () => {
                             </Row>
 
                             <Row>
-                                <Col> <Form.Control type="name" placeholder="John" aria-label="first-name" /></Col>
-                                <Col> <Form.Control type="name" placeholder="Enter middle name" aria-label="middle-name" /> </Col>
-                                <Col> <Form.Control type="name" placeholder="Doe" aria-label="last-name" /></Col>
+                                <Col>
+                                    <Form.Control type="name" placeholder="John" aria-label="first-name" value={user ? user.firstName : ''} />
+                                </Col>
+                                <Col>
+                                    <Form.Control type="name" placeholder="Enter middle name" aria-label="middle-name" value={user?.middleName ?? ''} />
+                                </Col>
+                                <Col>
+                                    <Form.Control type="name" placeholder="Doe" aria-label="last-name" value={user ? user.surname : ''}/>
+                                </Col>
                             </Row>
 
                             <Row className='mt-3'>
@@ -59,13 +67,13 @@ const Profile: React.FC = () => {
                             </Row>
 
                             <Row>
-                                <Col> <Form.Control type="email" placeholder="praise.kolawole@bowen.edu.ng" aria-label="email" disabled readOnly /></Col>
-                                <Col> <Form.Control type="phone" placeholder="Enter phone no" aria-label="phone" /> </Col>
+                                <Col> <Form.Control type="email" aria-label="email" value={user ? user.email : ''} disabled readOnly /></Col>
+                                <Col> <Form.Control type="phone" placeholder="Enter phone no" aria-label="phone" value={user?.phoneNo ?? ''}/> </Col>
                                 <Col>
-                                    <Form.Select aria-label="gender-select">
-                                        <option>Select your gender</option>
-                                        <option value="M">Male</option>
-                                        <option value="F">Female</option>
+                                    <Form.Select aria-label="gender-select" value={user?.gender ?? ''}>
+                                        <option value="">Select your gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </Form.Select>
                                 </Col>
                             </Row>
@@ -87,16 +95,16 @@ const Profile: React.FC = () => {
 
                             <Row>
                                 <Col>
-                                    <Form.Select aria-label="status-select">
+                                    <Form.Select aria-label="status-select" value={user?.maritalStatus ?? ''}>
                                         <option>Choose your status</option>
-                                        <option value="single">Single</option>
-                                        <option value="married">Married</option>
-                                        <option value="divorced">Divorced</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Divorced">Divorced</option>
                                     </Form.Select>
                                 </Col>
                                 <Col>
                                     <InputGroup className="mb-3">
-                                        <Form.Control type="text" placeholder="2000-01-01" aria-label="date-of-birth" />
+                                        <Form.Control type="text" placeholder="2000-01-01" aria-label="date-of-birth" value={user?.dateOfBirth ?? ''}/>
                                         <InputGroup.Text>
                                             {<FontAwesomeIcon icon={faCalendar} />}
 
@@ -105,15 +113,17 @@ const Profile: React.FC = () => {
                                 </Col>
 
                                 <Col>
-                                    <Form.Select aria-label="religion-select">
+                                    <Form.Select aria-label="religion-select" value={user?.religion ?? ''}>
                                         <option>Choose your status</option>
-                                        <option value="christianity">Christianity</option>
-                                        <option value="islam">Islam</option>
-                                        <option value="other">Others</option>
+                                        <option value="Christianity">Christianity</option>
+                                        <option value="Islam">Islam</option>
+                                        <option value="Other">Others</option>
                                     </Form.Select>
                                 </Col>
 
-                                <Col> <Form.Control type="text" placeholder="Enter denomination" aria-label="denomination" /></Col>
+                                <Col> 
+                                <Form.Control type="text" placeholder="Enter denomination" aria-label="denomination" value={user?.denomination ?? ''}/>
+                                </Col>
                             </Row>
 
                         </Form>
@@ -133,23 +143,25 @@ const Profile: React.FC = () => {
                             </Row>
 
                             <Row>
-                                <Col> <Form.Control type="text" placeholder="Enter maiden name" aria-label="maiden-name" /></Col>
+                                <Col> 
+                                <Form.Control type="text" placeholder="Enter maiden name" aria-label="maiden-name" value={user?.maidenName ?? ''}/>
+                                </Col>
 
                                 <Col>
-                                    <Form.Select aria-label="nationality-select">
-                                        <option>Select your nationality</option>
-                                        <option value="nigeria">Nigeria</option>
+                                    <Form.Select aria-label="nationality-select" value={user?.nationality ?? ''}>
+                                        <option value="">Select your nationality</option>
+                                        <option value="Nigeria">Nigeria</option>
                                     </Form.Select>
                                 </Col>
 
                                 <Col>
-                                    <Form.Select aria-label="state-select" disabled>
+                                    <Form.Select aria-label="state-select" disabled value={user?.stateOfOrigin ?? ''}>
                                         <option>Select your state of origin</option>
                                     </Form.Select>
                                 </Col>
 
                                 <Col>
-                                    <Form.Select aria-label="lga-select" disabled>
+                                    <Form.Select aria-label="lga-select" disabled value={user?.localGovernment ?? ''}>
                                         <option>Select your lga</option>
                                     </Form.Select>
                                 </Col>
