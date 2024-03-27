@@ -10,12 +10,17 @@ import Button from 'react-bootstrap/Button';
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-
 import { api } from '../../api/ApiRequest';
+import { UserProfile } from '../../dtos/user/UserDto';
+
+const BOWEN_URL = "https://bowenstudent.bowen.edu.ng/v2/welcome/?email=";
+
 
 const Dashboard: React.FC = () => {
   const { token, user, applicationDetail, getUserProfile, getUserCurrentApplication, hasApplication } = AuthContext();
   const [loading, setLoading] = useState(true);
+
+  
 
   useEffect(() => {
     //TODO: Bad practice, refactor this later, even though it is a temporary fix
@@ -144,7 +149,7 @@ const Dashboard: React.FC = () => {
               </Col>
 
               <Col md="3" offset="1">
-                {hasApplication() ? <CurrentAdmissionCard /> : <EmptyAdmissionCard />}
+                {hasApplication() ? <CurrentAdmissionCard user={user}/> : <EmptyAdmissionCard />}
               </Col>
 
             </Row >
@@ -192,7 +197,7 @@ const EmptyAdmissionCard: React.FC = () => {
   );
 }
 
-const CurrentAdmissionCard: React.FC = () => {
+const CurrentAdmissionCard: React.FC<{user: UserProfile | null}> = ({user}) => {
   const navigate = useNavigate();
 
   const viewFormSummary = () => {
@@ -231,8 +236,8 @@ const CurrentAdmissionCard: React.FC = () => {
         <Button variant="outline-info" className='mt-4 btn w-100'>Print Letter of Admission</Button>
               <Button variant="outline-info" className='mt-2 btn w-100' href="applicant/form/acceptanceFee">Pay Acceptance Fee</Button>
               <Button variant="outline-success" className='mt-2 btn w-100'>Print Affidavit</Button>
-              <Button variant="outline-success" className='mt-2 btn w-100' href="https://bowenstudent.bowen.edu.ng/v2/welcome/?email=solitarioista@gmail.com">Pay School Fees</Button>
-              <Button variant="outline-success" className='mt-2 btn w-100' href="https://bowenstudent.bowen.edu.ng/v2/welcome/?email=solitarioista@gmail.com">Upload Documents</Button>
+              <Button variant="outline-success" className='mt-2 btn w-100' href={`${BOWEN_URL + user?.email}`}>Pay School Fees</Button>
+              <Button variant="outline-success" className='mt-2 btn w-100' href={`${BOWEN_URL + user?.email}`}>Upload Documents</Button>
               <Button variant="outline-success" className='mt-2 btn w-100' href="applicant/form/idCard">Fill ID Card Information</Button>
               <Button variant="outline-info" className='mt-2 btn w-100'>Download Pledge Form</Button>
       </Card.Body>
