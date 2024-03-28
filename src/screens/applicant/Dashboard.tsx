@@ -167,7 +167,7 @@ const EmptyAdmissionCard: React.FC = () => {
       <Card.Header>Current Admission and Application</Card.Header>
 
       <Card.Body className='d-flex flex-column align-items-center'>
-        <Button variant="primary" className='btn w-100'>Current Admission</Button>
+    
 
         <Row className='w-100 mt-3'>
           <div className="d-flex justify-content-between align-items-center">
@@ -208,7 +208,7 @@ const CurrentAdmissionCard: React.FC<{user: UserProfile | null}> = ({user}) => {
       <Card.Header>Current Admission and Application</Card.Header>
 
       <Card.Body className='d-flex flex-column align-items-center'>
-      <Button variant="primary" className='btn w-100'>Current Admission</Button>
+      <p className='current'>Current Admission</p>
 
         <Row className='w-100 mt-3'>
           <div className="d-flex justify-content-between align-items-center">
@@ -225,9 +225,9 @@ const CurrentAdmissionCard: React.FC<{user: UserProfile | null}> = ({user}) => {
             <p className='text-dates'> Wednesday, January 31, 2024</p>
           </div>
 
-        </Row>
+        </Row><br></br>
 
-        <Button variant="primary" className='btn w-100'>Current Application</Button>
+        <p className='current'>Current Application</p>
 
         <Card.Text className='mt-3'>Application Form Submitted</Card.Text>
 
